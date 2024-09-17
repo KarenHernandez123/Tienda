@@ -19,7 +19,14 @@ namespace Tienda
         {
             InitializeComponent();
             m=new ManejadorDatos();
+            CargarProductos();
         }
+        private void CargarProductos()
+        {
+            DataSet ds = m.ObtenerProductos();
+            dtgvProducto.DataSource = ds.Tables["Productos"];
+        }
+
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -36,11 +43,27 @@ namespace Tienda
 
                 string resultado = m.GuardarProducto(producto);
                 MessageBox.Show(resultado);
+                CargarProductos();
             }
             else
             {
                 MessageBox.Show("Por favor, ingrese datos válidos.");
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtID.Text, out int id))
+            {
+                string resultado = m.BorrarProducto(id);
+                MessageBox.Show(resultado);
+                CargarProductos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un ID válido.");
+            }
+
         }
     }
 }

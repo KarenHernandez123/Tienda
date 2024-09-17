@@ -39,6 +39,8 @@
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.dtgvProducto = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // lblID
@@ -165,6 +167,17 @@
             this.btnEliminar.TabIndex = 40;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // dtgvProducto
+            // 
+            this.dtgvProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvProducto.Location = new System.Drawing.Point(51, 262);
+            this.dtgvProducto.Name = "dtgvProducto";
+            this.dtgvProducto.RowHeadersWidth = 51;
+            this.dtgvProducto.RowTemplate.Height = 24;
+            this.dtgvProducto.Size = new System.Drawing.Size(560, 264);
+            this.dtgvProducto.TabIndex = 41;
             // 
             // Form1
             // 
@@ -172,6 +185,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(726, 624);
+            this.Controls.Add(this.dtgvProducto);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnguardar);
@@ -185,6 +199,7 @@
             this.Controls.Add(this.lblID);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,6 +218,7 @@
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridView dtgvProducto;
     }
 }
 
