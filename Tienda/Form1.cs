@@ -65,5 +65,30 @@ namespace Tienda
             }
 
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtID.Text, out int id) &&
+               decimal.TryParse(txtPrecio.Text, out decimal precio) &&
+               !string.IsNullOrWhiteSpace(txtNombre.Text) &&
+               !string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                var producto = new Productos
+                {
+                    Id = id,
+                    Nombre = txtNombre.Text,
+                    Descripcion = txtDescripcion.Text,
+                    Precio = precio
+                };
+
+                string resultado = m.ModificarProducto(producto);
+                MessageBox.Show(resultado);
+                CargarProductos();
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese datos válidos.");
+            }
+        }
     }
 }
