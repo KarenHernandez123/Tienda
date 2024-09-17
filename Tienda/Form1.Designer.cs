@@ -125,7 +125,6 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(113, 36);
             this.txtPrecio.TabIndex = 37;
-            this.txtPrecio.Text = "$";
             // 
             // btnguardar
             // 
@@ -139,6 +138,7 @@
             this.btnguardar.TabIndex = 38;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnModificar
             // 
